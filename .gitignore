@@ -11,6 +11,9 @@ python3.13.9/
 # VSCode
 .vscode/
 
+# memo
+explain.git
+
 # Environment Variables
 .env
 
