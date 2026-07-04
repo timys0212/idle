@@ -1,27 +1,15 @@
 
 {
-  "schema_version": 1,
-  "player": {
-    "money": 1200,
-    "last_seen_ts": 1739500000
-  },
-  "equipment": {
-    "equipped_rod_id": "rod_bamboo_01",
-    "rods": {
-      "rod_bamboo_01": {"level": 2, "exp": 15}
-    }
-  },
-  "world": {
-    "current_spot_id": "spot_pond_01",
-    "unlocked_spot_ids": ["spot_pond_01"]
-  },
-  "inventory": {
-    "bait_basic": 50
-  },
-  "collection": {
-    "fish_carp": {"seen": 1, "caught": 7}
-  },
-  "upgrades": {
-    "upgrade_cast_speed": 1
+  "Version" : "v.2026-7.4",
+  "Collection" : ["basic_fish"],
+
+  "FishInfo" : {
+    "basic_fish":
+      {
+        "level" : 0,
+        "skill" : null,
+        "worth" : 5,
+        "PerWorth" : 1
+      }
   }
 }

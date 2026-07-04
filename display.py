@@ -25,7 +25,7 @@ class Screen:
     pygame.display.update()
     self.clock.tick(self.fps)
 
-  def exit(self, code: _ExitCode = None) -> NoReturn:
+  def close(self, code: _ExitCode = None) -> NoReturn:
     # code가 함수면 실행해서 값으로 바꿈 ( return값으로 )
     if callable(code):
       code = code()
