@@ -10,6 +10,13 @@
         "skill" : null,
         "worth" : 5,
         "PerWorth" : 1
+      },
+    "red_fish" :
+      {
+        "level" : 0,
+        "skill" : null,
+        "worth" : 7,
+        "PerWorth" : 1.5
       }
   }
 }

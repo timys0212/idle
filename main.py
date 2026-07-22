@@ -1,10 +1,12 @@
 import pygame
 
 from display import Screen
+from game import Game
 
 class Main:
   def __init__(self):
     self.window = Screen()
+    self.game = Game()
     self.running = True
 
   def run(self):
@@ -21,11 +23,16 @@ class Main:
             self.running = False
             self.window.close()
 
-      # calculate
+      #== calculate
 
+      # GameLoopCal
+      self.game.get_value_from_main(self.window)
 
       # //
       self.window.surface.fill("white")
+
+      # GameLoopDraw
+      
 
       # draw
 

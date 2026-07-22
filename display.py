@@ -12,6 +12,8 @@ class Screen:
     self.y = int(width * (9 / 16))
     self.fps = fps
 
+    self.dt = 0.0
+
     self.surface = pygame.display.set_mode((self.x, self.y))
     self.caption = "main_game"
     pygame.display.set_caption(self.caption)
@@ -23,7 +25,7 @@ class Screen:
 
   def update(self):
     pygame.display.update()
-    self.clock.tick(self.fps)
+    self.dt = self.clock.tick(self.fps) / 1000
 
   def close(self, code: _ExitCode = None) -> NoReturn:
     # code가 함수면 실행해서 값으로 바꿈 ( return값으로 )
