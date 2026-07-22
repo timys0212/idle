@@ -79,12 +79,19 @@ class FishingSys:
                 self.retry_fish = None
             else:
                 self.fish_id = choices(list(FISH), weights=[FISH[k]["weight"] for k in FISH], k=1)[0]
-            self.state = FishingState.BITING; self.elapsed = 0.0; self.message = "찌 물림!  SPACE로 후킹!"
-        elif self.state == FishingState.BITING and self.elapsed >= self.CIRCLE_DRAW_TIME + self.HOOK_DURATION:
-            self.retry_fish = self.fish_id
-            self.hook_result = "fail!"; self.hook_timing = "late"
-            self.state = FishingState.REELING; self.elapsed = 0.0
-            self.message = "HOOKING MISTAKE / TOO LATE!  재등장 확률 80%"
+            self.state = FishingState.BITING; self.elapsed = 0.0
+            self.message = "찌가 물렸다..."
+        elif self.state == FishingState.BITING:
+            if self.elapsed < self.CIRCLE_DRAW_TIME:
+                # 원을 그리는 동안은 후킹을 준비하는 연출일 뿐이다.
+                self.message = "찌가 물렸다..."
+            elif self.elapsed < self.CIRCLE_DRAW_TIME + self.HOOK_DURATION:
+                self.message = "SPACE로 후킹!"
+            else:
+                self.retry_fish = self.fish_id
+                self.hook_result = "fail!"; self.hook_timing = "late"
+                self.state = FishingState.REELING; self.elapsed = 0.0
+                self.message = "HOOKING MISTAKE / TOO LATE!  재등장 확률 80%"
         elif self.state == FishingState.REELING:
             self._reel(dt, rod, reeling)
 
