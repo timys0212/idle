@@ -99,7 +99,6 @@ class Game:
             pygame.draw.rect(surface, (145 + glow, 180 + glow // 2, 205), surface.get_rect(), 8)
             self._ring_segment(surface, center, radius, 0.0,
                                fishing.circle_draw_progress, (255, 235, 145), 7)
-            self._center_text(surface, "READY", center, (255, 235, 160))
             return
 
         # 완성된 원 위에 50%를 기준으로 대칭인 판정 구간을 표시한다.
