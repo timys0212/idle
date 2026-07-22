@@ -1,5 +1,5 @@
 import pygame
-from typing import NoReturn, TypeAlias, Callable, Optional
+from typing import NoReturn, TypeAlias, Callable
 
 ExitValue: TypeAlias = int | str | None
 ExitCode: TypeAlias = ExitValue | Callable[[], ExitValue]
@@ -15,7 +15,7 @@ class Screen:
     self.dt = 0.0
 
     self.surface = pygame.display.set_mode((self.x, self.y))
-    self.caption = "main_game"
+    self.caption = "고양이의 느긋한 낚시"
     pygame.display.set_caption(self.caption)
 
     self.clock = pygame.time.Clock()
